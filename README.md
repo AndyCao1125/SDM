@@ -2,7 +2,7 @@
 <p align="center">
   <h1 align="center">Spiking Diffusion Models
     <br>
-(IEEE Transaction on Artificial Intelligence)</h1>
+(IEEE Transactions on Artificial Intelligence)</h1>
   <p align="center" >
     Jiahang Cao<sup>1*</sup>,
     Hanzhong Guo<sup>2*</sup>,
