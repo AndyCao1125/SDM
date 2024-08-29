@@ -25,10 +25,10 @@
     <em><sup>3</sup>Northwestern University</em> 
   </p>
   <p align="center">
-    <a href='https://arxiv.org/abs/2306.17046'>
+    <a href='https://github.com/AndyCao1125/SDM'>
       <img src='https://img.shields.io/badge/Paper-PDF-red?style=flat&logo=arXiv&logoColor=red' alt='Paper PDF'>
     </a>
-    <a href='https://openaccess.thecvf.com/content/WACV2024/html/Cao_Spiking_Denoising_Diffusion_Probabilistic_Models_WACV_2024_paper.html' style='padding-left: 0.5rem;'>
+    <a href='https://github.com/AndyCao1125/SDM' style='padding-left: 0.5rem;'>
       <img src='https://img.shields.io/badge/Proceeding-HTML-blue?style=flat&logo=Google%20chrome&logoColor=blue' alt='Proceeding Supp'>
     </a>
   </p>
@@ -36,3 +36,19 @@
     <img src="figs/illustration_main.png" alt="Logo" width="80%">
   </p> -->
 </p>
+
+
+This project **SDM** is an extended version of [**SDDPM**](https://github.com/AndyCao1125/SDDPM). We introduce several key improvements:
+
+- **A New Family of Spiking-based Diffusion Models**：This work extends applicability to a wider array of diffusion solvers, including but not limited to DDPM, DDIM, Analytic-DPM and DPM-Solver.
+- **Biologically Inspired Temporal-wise Spiking Mechanism (TSM)**: Inspired by biological processes that the neuron input at each moment experiences considerable fluctuations rather than being predominantly controlled by fixed synaptic weights, this module enables spiking neurons to capture more dynamic information. The TSM module can be integrated with existing modules (proposed by SDDPM) to further improve the image generation quality.
+- **ANN-SNN Conversion for SDM**: To the best of our knowledge, we make the *first attempt* to utilize an ANN-SNN approach for implementing spiking diffusion models, complete with theoretical foundations.
+
+
+
+
+
+## Acknowledgements & Contact
+We thank the authors ([pytorch-ddpm](https://github.com/w86763777/pytorch-ddpm), [spikingjelly](https://github.com/fangwei123456/spikingjelly)) for their open-sourced codes.
+
+For any help or issues of this project, please contact jcao248@connect.hkust-gz.edu.cn.
