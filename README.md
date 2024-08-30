@@ -44,6 +44,9 @@ This work **SDM** is an extended version of [**SDDPM**](https://github.com/AndyC
 - **Biologically Inspired Temporal-wise Spiking Mechanism (TSM)**: Inspired by biological processes that the neuron input at each moment experiences considerable fluctuations rather than being predominantly controlled by fixed synaptic weights, this module enables spiking neurons to capture more dynamic information. The TSM module can be integrated with existing modules (proposed by SDDPM) to further improve the image generation quality.
 - **ANN-SNN Conversion for SDM**: To the best of our knowledge, we make the *first attempt* to utilize an ANN-SNN approach for implementing spiking diffusion models, complete with theoretical foundations.
 
+<p align="center">
+    <img src="figs/main-fig-final.png" alt="Logo" width="70%">
+</p>
 
 ## Requirements
 Please see [**SDDPM**](https://github.com/AndyCao1125/SDDPM).
@@ -103,6 +106,18 @@ cd SDM
 CUDA_VISIBLE_DEVICES=0 python sample.py
 ```
 
+## Citation
+
+If you find our work useful, please consider citing:
+
+```
+@inproceedings{cao2024spiking,
+  title={Spiking Diffusion Models},
+  author={Cao, Jiahang and Guo, Hanzhong and Wang, Ziqing and Zhou, Deming and Cheng, Hao and Zhang, Qiang and Xu, Renjing},
+  journal={arXiv preprint arXiv:2408.16467},
+  year={2024}
+}
+```
 
 
 ## Acknowledgements & Contact
