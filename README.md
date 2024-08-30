@@ -25,10 +25,10 @@
     <em><sup>3</sup>Northwestern University</em> 
   </p>
   <p align="center">
-    <a href='https://github.com/AndyCao1125/SDM'>
+    <a href='https://arxiv.org/pdf/2408.16467'>
       <img src='https://img.shields.io/badge/Paper-PDF-red?style=flat&logo=arXiv&logoColor=red' alt='Paper PDF'>
     </a>
-    <a href='https://github.com/AndyCao1125/SDM' style='padding-left: 0.5rem;'>
+    <a href='https://arxiv.org/pdf/2408.16467' style='padding-left: 0.5rem;'>
       <img src='https://img.shields.io/badge/Proceeding-HTML-blue?style=flat&logo=Google%20chrome&logoColor=blue' alt='Proceeding Supp'>
     </a>
   </p>
@@ -45,6 +45,63 @@ This work **SDM** is an extended version of [**SDDPM**](https://github.com/AndyC
 - **ANN-SNN Conversion for SDM**: To the best of our knowledge, we make the *first attempt* to utilize an ANN-SNN approach for implementing spiking diffusion models, complete with theoretical foundations.
 
 
+## Requirements
+Please see [**SDDPM**](https://github.com/AndyCao1125/SDDPM).
+
+## TSM Finetune
+Here we provide an example code to finetune the SDM models by inheriting the weights obtained from SDDPM pre-training:
+
+```shell
+from TSM import Spk_UNet_TSM
+
+... (First, pretrain the standard SNN UNet)
+
+pretrained_model = Spk_UNet(
+      T=args.T, ch=args.ch, ch_mult=args.ch_mult, attn=args.attn,
+      num_res_blocks=args.num_res_blocks, dropout=args.dropout, timestep=args.timestep, img_ch=args.img_ch)
+  
+# Load model
+ckpt = torch.load(os.path.join('/your/pretrained_checkpoint'))
+pretrained_model.load_state_dict(ckpt['net_model'], strict=True)
+pretrained_dict = pretrained_model.state_dict()
+
+net_model = Spk_UNet_TSM(
+    T=args.T, ch=args.ch, ch_mult=args.ch_mult, attn=args.attn,
+    num_res_blocks=args.num_res_blocks, dropout=args.dropout, timestep=args.timestep, img_ch=args.img_ch)
+
+model_dict = net_model.state_dict()
+new_state_dict = OrderedDict()
+
+for name,para in pretrained_dict.items():
+    if name in model_dict:
+        new_state_dict[name] = para
+    
+    elif 'conv' and 'weight' in name:
+        head = name[:-7]
+        new_name = head + '.tsmconv.weight'
+        new_state_dict[new_name] = para
+        
+    elif 'conv' and 'bias' in name:
+        head = name[:-5]
+        new_name = head + '.tsmconv.bias'
+        new_state_dict[new_name] = para
+       
+net_model.load_state_dict(new_state_dict, strict=False)
+
+print(f'-------Successfully inherit pretrained weights-------')
+
+...(Next, finetune the TSM SDM with the same training code from SDDPM)
+```
+
+## Sample
+Example codes for sampling the images with DDIM solver.
+
+The checkpoint of SDM with `snn_timesteps=8` in CIFAR-10 is released. You can download the checkpoint through [this link](https://drive.google.com/file/d/1Z38wxR-olP_dlL0b-Wa8fwjM611hoO65/view?usp=drive_link).
+
+```shell
+cd SDM
+CUDA_VISIBLE_DEVICES=0 python sample.py
+```
 
 
 
