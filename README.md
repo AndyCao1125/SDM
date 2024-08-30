@@ -38,7 +38,7 @@
 </p>
 
 
-This project **SDM** is an extended version of [**SDDPM**](https://github.com/AndyCao1125/SDDPM). We introduce several key improvements:
+This work **SDM** is an extended version of [**SDDPM**](https://github.com/AndyCao1125/SDDPM). We introduce several key improvements:
 
 - **A New Family of Spiking-based Diffusion Models**：This work extends applicability to a wider array of diffusion solvers, including but not limited to DDPM, DDIM, Analytic-DPM and DPM-Solver.
 - **Biologically Inspired Temporal-wise Spiking Mechanism (TSM)**: Inspired by biological processes that the neuron input at each moment experiences considerable fluctuations rather than being predominantly controlled by fixed synaptic weights, this module enables spiking neurons to capture more dynamic information. The TSM module can be integrated with existing modules (proposed by SDDPM) to further improve the image generation quality.
