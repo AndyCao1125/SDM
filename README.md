@@ -49,6 +49,6 @@ This project **SDM** is an extended version of [**SDDPM**](https://github.com/An
 
 
 ## Acknowledgements & Contact
-We thank the authors ([pytorch-ddpm](https://github.com/w86763777/pytorch-ddpm), [spikingjelly](https://github.com/fangwei123456/spikingjelly)) for their open-sourced codes.
+We thank the authors ([pytorch-ddpm](https://github.com/w86763777/pytorch-ddpm), [Fast-SNN](https://github.com/yangfan-hu/Fast-SNN), [spikingjelly](https://github.com/fangwei123456/spikingjelly)) for their open-sourced codes.
 
 For any help or issues of this project, please contact jcao248@connect.hkust-gz.edu.cn.
