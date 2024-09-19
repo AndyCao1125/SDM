@@ -1,6 +1,6 @@
-# ANN2SNN Spiking DDPM
+# ANN-to-SNN Spiking Diffusion Models
 
-This repo holds the codes for Spiking Denoising Diffusion Probabilistic Model through quantized ANN-SNN conversion.
+This repo holds the codes for Spiking Diffusion Models through quantized ANN-SNN conversion.
 
 This implementation realizes a spiking Unet model based on the work from Fast-SNN [1].
 
@@ -16,11 +16,11 @@ This implementation realizes a spiking Unet model based on the work from Fast-SN
 
 - Download dataset:
    For cifar10 dataset, create folder `stats` for `cifar10.train.npz`.
-   (download link:[cifar10.train.npz](https://drive.google.com/drive/folders/1UBdzl6GtNMwNQ5U-4ESlIer43tNjiGJC?usp=sharing))
+   (download link: [cifar10.train.npz](https://drive.google.com/drive/folders/1UBdzl6GtNMwNQ5U-4ESlIer43tNjiGJC?usp=sharing))
 
 ## Prepare Quantized ANNs
 
-We use APoT method to train our quantized ANNs. [APoT_Quantization](https://github.com/yhhhli/APoT_Quantization)
+We use APoT method to train our quantized ANNs. (Reference: [APoT_Quantization [2]](https://github.com/yhhhli/APoT_Quantization))
 
 ### CIFAR-10
 
@@ -143,3 +143,5 @@ The results and images will be saved in `snn_eval.txt` and `images`.
 ## Reference
 
 [1] [Fast-SNN](https://github.com/yangfan-hu/Fast-SNN)
+
+[2] [APoT_Quantization](https://github.com/yhhhli/APoT_Quantization)
