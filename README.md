@@ -48,6 +48,14 @@ This work **SDM** is an extended version of [**SDDPM**](https://github.com/AndyC
     <img src="figs/main-fig-final.png" alt="Logo" width="70%">
 </p>
 
+## TODO Lists
+- [x] **[Updated on August 29 2024]** Release SDM direct training (finetuning) codes!
+- [x] **[Updated on September 19 2024]** Release SDM ANN-to-SNN conversion codes! 
+
+
+
+
+
 ## Requirements
 Please see [**SDDPM**](https://github.com/AndyCao1125/SDDPM).
 
@@ -105,6 +113,10 @@ The checkpoint of SDM with `snn_timesteps=8` in CIFAR-10 is released. You can do
 cd SDM
 CUDA_VISIBLE_DEVICES=0 python sample.py
 ```
+
+## ANN-to-SNN Conversion
+Please see [ANN2SNN](https://github.com/AndyCao1125/SDM/tree/master/ANN2SNN).
+
 
 ## Citation
 
