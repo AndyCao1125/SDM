@@ -123,11 +123,12 @@ Please see [ANN2SNN](https://github.com/AndyCao1125/SDM/tree/master/ANN2SNN).
 If you find our work useful, please consider citing:
 
 ```
-@inproceedings{cao2024spiking,
+@article{cao2024spiking,
   title={Spiking Diffusion Models},
   author={Cao, Jiahang and Guo, Hanzhong and Wang, Ziqing and Zhou, Deming and Cheng, Hao and Zhang, Qiang and Xu, Renjing},
-  journal={arXiv preprint arXiv:2408.16467},
-  year={2024}
+  journal={IEEE Transactions on Artificial Intelligence},
+  year={2024},
+  publisher={IEEE}
 }
 ```
 
