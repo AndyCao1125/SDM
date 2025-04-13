@@ -60,6 +60,8 @@ This work **SDM** is an extended version of [**SDDPM**](https://github.com/AndyC
 Please see [**SDDPM**](https://github.com/AndyCao1125/SDDPM).
 
 ## TSM Finetune
+- Pretrained weight of SDDPM  [(this link)](https://drive.google.com/drive/folders/1ATfGPQqlqklDuWtAtll-I9_7bMJuqEmy?usp=drive_link) with spiking timestep=4, CIFAR-10.
+
 Here we provide an example code to finetune the SDM models by inheriting the weights obtained from SDDPM pre-training:
 
 ```shell
@@ -103,6 +105,7 @@ print(f'-------Successfully inherit pretrained weights-------')
 
 ...(Next, finetune the TSM SDM with the same training code from SDDPM)
 ```
+Please set the number of the finetuning steps as 200k (if 8 GPUs) to 500k (when the number of GPUs is small).
 
 ## Sample
 Example codes for sampling the images with DDIM solver.
